@@ -59,7 +59,6 @@ namespace :db do
     Rake::Task['db:create'].execute
     Rake::Task['db:migrate'].execute
     Rake::Task['db:setup'].execute
-    Rake::Task['db:reseed_employees'].execute
 
     puts 'Restoring pg dump to local DB'
     db_name = YAML.load(File.read(File.expand_path(Rails.root + 'config/database.yml')))[db_env]['database']
